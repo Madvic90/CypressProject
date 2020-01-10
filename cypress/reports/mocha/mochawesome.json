@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2020-01-10T09:04:51.704Z",
+    "end": "2020-01-10T09:05:00.890Z",
+    "duration": 9186,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1f0312ee-a5ee-4732-a0bb-b7ba83bad8c4",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "502c6273-8801-4f17-9a23-402db17b236d",
+          "title": "Working with plugin",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "file upload",
+              "fullTitle": "Working with plugin file upload",
+              "timedOut": null,
+              "duration": 5954,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://cgi-lib.berkeley.edu/ex/fup.html'); //upload a file\nvar fileName = 'PSM1 Factuur.pdf';\ncy.fixture(fileName).then(function (fileContent) {\n  cy.get('[type=\"file\"]').upload({\n    fileContent: fileContent,\n    fileName: fileName,\n    mimeType: 'application/json'\n  });\n});\ncy.get('[type=\"submit\"').click();\ncy.contains(\"You've uploaded a file. Your notes on the file were:\");",
+              "err": {
+                "message": "CypressError: Cypress detected a cross origin error happened on page load:\n\n  > Blocked a frame with origin \"https://cgi-lib.berkeley.edu\" from accessing a cross-origin frame.\n\nBefore the page load, you were bound to the origin policy:\n  > https://berkeley.edu\n\nA cross origin error happens when your application navigates to a new superdomain which does not match the origin policy above.\n\nThis typically happens in one of three ways:\n\n1. You clicked an <a> that routed you outside of your application\n2. You submitted a form and your server redirected you outside of your application\n3. You used a javascript redirect to a page outside of your application\n\nCypress does not allow you to change superdomains within a single test.\n\nYou may need to restructure some of your test code to avoid this problem.\n\nAlternatively you can also disable Chrome Web Security which will turn off this restriction by setting { chromeWebSecurity: false } in 'cypress.json'.\n\nhttps://on.cypress.io/cross-origin-violation\n",
+                "estack": "CypressError: Cypress detected a cross origin error happened on page load:\n\n  > Blocked a frame with origin \"https://cgi-lib.berkeley.edu\" from accessing a cross-origin frame.\n\nBefore the page load, you were bound to the origin policy:\n  > https://berkeley.edu\n\nA cross origin error happens when your application navigates to a new superdomain which does not match the origin policy above.\n\nThis typically happens in one of three ways:\n\n1. You clicked an <a> that routed you outside of your application\n2. You submitted a form and your server redirected you outside of your application\n3. You used a javascript redirect to a page outside of your application\n\nCypress does not allow you to change superdomains within a single test.\n\nYou may need to restructure some of your test code to avoid this problem.\n\nAlternatively you can also disable Chrome Web Security which will turn off this restriction by setting { chromeWebSecurity: false } in 'cypress.json'.\n\nhttps://on.cypress.io/cross-origin-violation\n\n    at Object.cypressErr (https://cgi-lib.berkeley.edu/__cypress/runner/cypress_runner.js:106136:11)\n    at Object.throwErr (https://cgi-lib.berkeley.edu/__cypress/runner/cypress_runner.js:106091:18)\n    at Object.throwErrByPath (https://cgi-lib.berkeley.edu/__cypress/runner/cypress_runner.js:106123:17)\n    at onPageLoadErr (https://cgi-lib.berkeley.edu/__cypress/runner/cypress_runner.js:90900:21)\n    at HTMLIFrameElement.<anonymous> (https://cgi-lib.berkeley.edu/__cypress/runner/cypress_runner.js:101273:17)\n    at HTMLIFrameElement.dispatch (https://cgi-lib.berkeley.edu/__cypress/runner/cypress_runner.js:16821:27)\n    at HTMLIFrameElement.elemData.handle (https://cgi-lib.berkeley.edu/__cypress/runner/cypress_runner.js:16629:28)",
+                "diff": null
+              },
+              "uuid": "d036cd6c-b2d7-4c68-8261-e959deaf7339",
+              "parentUUID": "502c6273-8801-4f17-9a23-402db17b236d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "d036cd6c-b2d7-4c68-8261-e959deaf7339"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 5954,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": true,
+        "html": false,
+        "json": true
+      },
+      "version": "4.1.0"
+    }
+  }
+}
